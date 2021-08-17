@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" href="./lib/onsenui/css/onsenui.css">        
+        <link rel="stylesheet" href="./lib/onsenui/css/onsen-css-components.css">
+        <script src="./lib/onsenui/js/onsenui.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/common.css">
+        <title>Bamaga Dreamtime Store</title>
+    </head>
+    <body>
+        <ons-navigator id="myNavigator" page="main-temp">
+            <ons-page id="root-page">
+                <ons-tabbar swipeable position="bottom">
+                    <ons-tab page="home-temp" label="Home" icon="ion-ios-home" active></ons-tab>
+                    <ons-tab page="wishlist-temp" label="Wishlist" icon="ion-ios-heart"></ons-tab>
+                    <ons-tab page="settings-temp" label="Settings" icon="ion-ios-cog"></ons-tab>
+                </ons-tabbar>
+            </ons-page>    
+        </ons-navigator>
+        <!-- homepage -->
+        <template id="home-temp">
+            <ons-page id="home-page">
+                <ons-card class="home-carousel">
+                    <div class="page-title">New Summer Collection</div>
+                    <!-- carousel image-->
+                    <ons-carousel fullscreen swipeable auto-scroll overscrollable id="carousel">
+                        <ons-carousel-item>
+                            <img class="item-caro-image" src="./img/item/item-10.jpeg">\
+                            <div class="title">lota Dress</div>
+                            <div class="content">
+                                <div class="item-price">$99</div>
+                            </div>
+                        </ons-carousel-item>
+                        <ons-carousel-item>
+                            <img class="item-caro-image" src="./img/item/item-09.jpeg">
+                            <div class="title">Theta Dress</div>
+                            <div class="content">
+                                <div class="item-price">$99</div>
+                            </div>
+                        </ons-carousel-item>
+                        <ons-carousel-item>
+                            <img class="item-caro-image" src="./img/item/item-08.jpeg">
+                            <div class="title">Eta Dress</div>
+                            <div class="content">
+                                <div class="item-price">$79</div>
+                            </div>
+                        </ons-carousel-item>
+                      </ons-carousel>
+                </ons-card>
+                <ons-list id="item-list"></ons-list>
+            </ons-page>
+        </template>
+        <!-- item detail page -->
+        <template id="item-detail-temp">
+            <ons-page id="item-detail-page">
+                <ons-toolbar>
+                    <div class="left"><ons-back-button>My Item</ons-back-button></div>
+                    <div class="center title"></div>
+                </ons-toolbar>
+                <!-- Programatically set -->
+                <ons-list id="item-detail"></ons-list>
+            </ons-page>
+        </template>
+        <!-- wishlist template page -->
+        <template id="wishlist-temp">
+            <ons-page id="wishlist-page">
+                <ons-card class="wishlist">
+                    <div class="page-title ">My Wishlist</div>
+                </ons-card>
+                <ons-list id="my-wishlist"></ons-list>
+            </ons-page>
+        </template>
+        <!-- settings page -->
+        <template id="settings-temp">
+            <ons-page id="settings-page">
+                <ons-card class="account-info">
+                    <h1>Takanori Fujiki</h1>
+                    <p>takanori.fujiki@gmail.com</p>
+                </ons-card>
+                <ons-card class="setting-info">
+                    <ul>
+                        <div class="flex">
+                            <li>Cash</li>
+                            <ons-icon class="item-icon" id="booking-btn" size="20px" icon="fa-dollar-sign"></ons-icon>
+                        </div>
+                        <div class="flex">
+                            <li>Point</li>
+                            <ons-icon class="item-icon" id="booking-btn" size="20px" icon="fa-coins"></ons-icon>
+                        </div>
+                        <div class="flex">
+                            <li>Coupon</li>
+                            <ons-icon class="item-icon" id="booking-btn" size="20px" icon="fa-ticket-alt"></ons-icon>
+                        </div>
+                        <div class="flex">
+                            <li>Library</li>
+                            <ons-icon class="item-icon" id="booking-btn" size="20px" icon="fa-book-open"></ons-icon>
+                        </div>
+                        <div class="flex">
+                            <li>Cart</li>
+                            <ons-icon class="item-icon" id="booking-btn" size="20px" icon="fa-cart-plus"></ons-icon>
+                        </div>
+                        <div class="flex">
+                            <li>Wishlist</li>
+                            <ons-icon class="item-icon" id="booking-btn" size="20px" icon="fa-heart"></ons-icon>
+                        </div>
+                    </ul>
+                </ons-card>
+                <ons-card class="setting-list">
+                    <ons-list>
+                        <ons-list-header>Settings</ons-list-header>
+                        <ons-list-item>
+                            <div class="center">Push Notification</div>
+                            <div class="right"><ons-switch></ons-switch></div>
+                          </ons-list-item>
+                          <ons-list-item>
+                            <div class="center">Hide Item Image</div>
+                            <div class="right"><ons-switch></ons-switch></div>
+                          </ons-list-item>
+                          <ons-list-header>Appearance</ons-list-header>
+                        <ons-list-item>
+                            <div class="center">Sync Item From Last Visit</div>
+                            <div class="right"><ons-switch></ons-switch></div>
+                          </ons-list-item>
+                          <ons-list-item>
+                            <div class="center">Suggst New Item</div>
+                            <div class="right"><ons-switch></ons-switch></div>
+                          </ons-list-item>
+                          <ons-list-item>
+                            <div class="center">Custom Font</div>
+                            <div class="right"><ons-switch></ons-switch></div>
+                          </ons-list-item>
+                    </ons-list>
+                </ons-card>
+                <div class="save-btn">
+                    <ons-button onclick="showConfirm()">Save</ons-button>
+                </div>
+            </ons-page>
+        </template>
+
+        <!-- ******************** SCRIPT BLOCKS ******************** -->
+        <script type="text/javascript" src="cordova.js"></script>
+
+        <script type="text/javascript" src="./js/itemdata.js"></script>
+
+        <!-- ******************** Main JS Code ******************** -->
+        <script>
+            document.addEventListener('init', function(event) {
+                var page = event.target;
+                // Set each function to each page
+                if (page.id === 'home-page') {
+                    loadHomeList(page);
+                }
+                if (page.id === 'wishlist-page') {
+                    loadWishlist(page);
+                }
+                if (page.id === 'item-detail-page'){
+                    loadItemDetail(page); 
+                }
+            });
+
+            //  ******* Basic function *********************************************
+            // Back button 
+            function goBack(){
+                document.querySelector('#myNavigator').popPage();
+            }
+
+            // Save setting (Confirm)
+            var showConfirm = function() {
+                ons.notification.confirm('Do you want to save settings?')
+            };
+
+            // Toast for added to cart
+            var addCart = function() {
+                ons.notification.toast('Added to your cart!', {
+                    timeout: 2000
+                });
+            };
+
+            // Fired by each button in the list
+            function pushItemDetail(rID){
+
+                var currItem = itemSet[Number.parseInt(rID)];
+
+                document.querySelector('#myNavigator').pushPage('item-detail-temp', {data: {cItem: currItem}});
+            }
+
+            //  ******* Home page *********************************************
+            function loadHomeList(page){
+                // the list element
+                var homeItemList = page.querySelector('#item-list');
+
+                // add items as list ordinally
+                for(let i = 0; i < itemSet.length; i++){
+                    homeItemList.appendChild(
+                        ons.createElement(
+                            '<ons-list-item>' + 
+                            '<div class="item-list-item">' + 
+                            '<div class="item-list-left">' + 
+                            '<img class="item-list-thumb" src="./img/item/' + itemSet[i].keyImage + '">' +
+                            '</div>' +
+                            '<div class="item-list-mid">' +
+                            '<div class="item-list-heading">' + itemSet[i].name + '</div>' +
+                            '<div class="item-list-heading">' + itemSet[i].price + '</div>' +
+                            '<div class="item-list-subhead">' + itemSet[i].shortDesc + '</div>' + 
+                            '</div>' +
+                            '<div class="item-list-right">' +
+                            '<ons-button onclick="pushItemDetail(' + itemSet[i].id + ')" ' + (!itemSet[i].active ? 'disabled' : '') + ' icon="md-caret-right"></ons-button>' +
+                            '</div></div></ons-list-item>'
+                        )
+                    );
+                }
+            }
+
+            //  ******* Item detail *******************************************
+            function loadItemDetail(currPage){
+
+                var itemDetail = document.getElementById('item-detail')
+
+                // there is only one title 
+                currPage.querySelector('.title').innerHTML = currPage.data.cItem.name;
+
+                // add items as list ordinally
+                itemDetail.appendChild(
+                    ons.createElement(
+                        '<ons-list-item class="item-detail-content">' +
+                            '<img class="item-list-thumb" src="./img/item/' + currPage.data.cItem.keyImage + '">' +
+                            '<div class="item-list-heading">' + currPage.data.cItem.price + '</div>' +
+                            '<p class="item-list-heading">' + currPage.data.cItem.shortDesc + '</p>' +
+                        '</ons-list-item>'
+                    )
+                );
+            }
+
+            //  ******* Wishlist page ****************************************
+            function loadWishlist(page) {
+                var wishlistItem = page.querySelector('#my-wishlist');
+
+                // add items as list ordinally
+                for(let i = 0; i < itemSet.length; i++){
+                    wishlistItem.appendChild(
+                        ons.createElement(
+                            '<ons-list-item>' + 
+                            '<div class="item-list-item">' + 
+                            '<div class="item-list-left">' + 
+                            '<img class="item-list-thumb" src="./img/item/' + itemSet[i].keyImage + '">' +
+                            '</div>' +
+                            '<div class="item-list-mid">' +
+                            '<div class="item-list-heading">' + itemSet[i].name + '</div>' +
+                            '<div class="item-list-heading">' + itemSet[i].price + '</div>' +
+                            '<div class="item-list-subhead">' + itemSet[i].shortDesc + '</div>' + 
+                            '</div>' +
+                            '<ons-fab position="bottom right">' +
+                            '<a class="cart-btn" onclick="addCart()"><ons-icon icon="fa-cart-plus"></ons-icon></a>' +
+                            '</ons-fab>' +
+                            '</div></ons-list-item>'
+                        )
+                    );
+                }
+            }
+        
+        </script>
+    </body>
+</html>

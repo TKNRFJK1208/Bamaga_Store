@@ -1,0 +1,224 @@
+/********** INDEX PAGE CLASSES ********/
+.content-item{
+    display: flex;
+    margin:15px;
+    align-items: center;
+}
+
+/* home header */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: transparent;
+}
+
+.header .center {
+    font-size: 1rem;
+    text-transform: uppercase;
+    position: relative;
+    color: #fff;
+    font-weight: 400;
+}
+
+/* banner section */
+.bnr {
+    background-image: url('../img/woman.jpg');
+    background-size: cover;
+    background-position: right;
+    /* position: relative; */
+    z-index: 1;
+    width: 100%;
+    min-height: 100vh;
+    /* position: relative; */
+    text-align: center;
+    margin: 0 auto;
+    justify-content: center;
+    display: grid;
+}
+
+.bnr h2 {
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    text-transform: uppercase;
+    width: fit-content;
+    font-size: 2rem;
+    font-weight: 700;
+    position: relative;
+    color: #eee;
+}
+
+.bnr .cta {
+    display: inline-block;
+    padding: 5px 20px;
+    color: #eee;
+    background-color: transparent;
+    border: 5px solid #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    transition: .3s ease;
+    transition-property: background-color, color;
+    text-decoration: none;
+    margin-top: 50px;
+    min-width: 120px;
+}
+
+.bnr .cta:hover {
+    color: #fff;
+    background-color: cadetblue;
+    border: 2px solid #fff;
+}
+
+
+.page-title {
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 600;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: lightslategray;
+    padding-bottom: 10px;
+}
+
+/* Home */
+.ons-carousel {
+    height: calc(300 * (100vw / 500));
+    margin: 15px 0px;
+}
+
+.item-caro-image{
+    width: 100%;
+    border-radius: 10%;
+}
+
+.title {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    padding-right: 30px;
+}
+
+.item-price {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+
+/* Item Detail */
+.item-detail-content .item-list-heading {
+    padding: 10px 50px;
+}
+
+.item-detail-content .item-list-subhead{
+    font-size: 1em;
+    padding-left: 20px;
+}
+
+/* Wishlist */
+.item-list-item{
+    display: grid;    
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-areas: "thumb copy btn";
+}
+
+.item-list-left{
+    grid-area: thumb;    
+}
+
+.item-list-mid{
+    grid-area: copy;
+    padding: 20px 0 0 10px;
+}
+
+.item-list-right{
+    grid-area: btn;
+    align-self: center;
+    justify-self: center;
+}
+
+img.item-list-thumb{
+    width: 100%;
+    border-radius: 15%;    
+}
+
+.item-list-heading{
+    font-size: 1.2em;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.item-list-subhead{
+    font-size: 1em;
+    padding-top: 20px;
+}
+
+/* Setting */
+.account-info {
+    text-align: center;
+    background-color: cadetblue;
+}
+
+.account-info p {
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.setting-info {
+    
+    justify-content: center;
+}
+
+.setting-info ul {
+    display: grid;
+    grid-template-columns: repeat(3, calc(100% / 3));
+}
+
+.flex {
+    justify-content: center;
+    text-align: center;
+}
+
+.setting-info ul {
+    padding-right: 40px;
+}
+
+.setting-info ul li {
+    list-style: none;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.item-icon {
+    padding: 20px 0;
+}
+
+.setting-list {
+    text-align: center;
+}
+
+.setting-list h2 {
+    font-size: 1rem;
+    color: #4383e4;    
+    margin-top: 20px;;
+}
+
+
+.setting-list p {
+    margin-bottom: 2rem;
+}
+
+.interest-grid{
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto 75px;
+    grid-row-gap: 15px;
+}
+
+.save-btn {
+    text-align: center;
+}

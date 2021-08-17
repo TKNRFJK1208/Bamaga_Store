@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+
+        <link rel="stylesheet" href="./lib/onsenui/css/onsenui.css">
+        <link rel="stylesheet" href="./lib/onsenui/css/onsen-css-components.min.css">
+        <script src="./lib/onsenui/js/onsenui.min.js"></script>
+        
+        <link rel="stylesheet" type="text/css" href="css/common.css">
+        
+        <title>Bamaga Dreamtime Store</title>
+    </head>
+    <body>
+        <ons-page>
+            <div class="content-item bnr">
+                <ons-toolbar class="header">
+                    <div class="center">Bamaga Dreamtime Store</div>
+                </ons-toolbar>
+                <h2 class="page-title">New Collection<br>Out Now</h2>
+                <ons_buttton data-src="home.html" class="cta" onclick="navPage(this)">GO SHOPPING</ons_buttton>
+            </div>
+        </ons-page>
+
+        
+        <script type="text/javascript" src="cordova.js"></script>
+
+        <script>
+            // When the button is clicked then set the location by the its data-src
+            function navPage(target){
+                window.location = event.target.getAttribute('data-src');
+            }
+        </script>
+    </body>
+</html>
